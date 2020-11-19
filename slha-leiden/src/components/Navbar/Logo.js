@@ -21,7 +21,7 @@ const getLogo = graphql`
 
 const Wrapper = styled.div`
   margin: auto 0;
-  width: 150px;
+  width: 80px;
 `
 
 const Logo = () => {
