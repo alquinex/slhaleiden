@@ -4,6 +4,61 @@ import { Link } from 'gatsby'
 import Logo from './Logo'
 import { GoThreeBars } from 'react-icons/go'
 import styled from 'styled-components'
+import StyledFlex from '../base/StyledFlex'
+import Container from '../base/Container'
+
+const StyledButton = styled.button`
+  background-color: ${(props) => props.theme.colors.primary};
+  color: var(--color-primary);
+`
+
+// const PrimaryButton = styled.button``
+
+// const SecondaryButton = styled.button``
+
+// const StyledDynamicButton = styled.button`
+//   background-color: ${(props) => {
+//     if (props.variant === 'primary') return `var(--color-primary)`
+
+//     if (props.variant === 'secondary') return props.theme.colors.secondary
+
+//     return 'gray'
+//   }};
+
+//   color: ${(props) => `var(--color-${props.variant})`};
+
+//   color: ${({ variant, theme }) => theme.colors[variant] || 'gray'};
+
+//   padding: ${(props) => (props.size === 'lg' ? '30px' : props.size === 'md' ? '15px' : '5px')};
+//   font-size: ${({ size }) => (size === 'lg' ? '24px' : size === 'md' ? '18px' : '14px')};
+// `
+
+const NavWrapper = styled.div`
+  background-color: white;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+`
+
+const StyledNavbar = styled.nav`
+  display: flex;
+
+  & > div {
+    padding: 0.5rem 0.75rem;
+  }
+
+  & > button {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    & > a {
+      display: ${(props) => (props.isOpen ? 'block' : 'none')};
+    }
+
+    & > button {
+      display: block;
+    }
+  }
+`
 
 const Navbar = () => {
   const [isOpen, setNav] = useState(false)
@@ -12,30 +67,30 @@ const Navbar = () => {
   }
 
   return (
-    <Wrapper>
-      <div className='navbar-center'>
-        <div className='navbar-header'>
-          <Link to='/'>
-            <Logo />
-          </Link>
-          <button type='button' className='toggle-button' onClick={toggleNav}>
-            <GoThreeBars className='menu-icon' />
-          </button>
-        </div>
-        <ul className='navbar-links'>
-          {links.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link to={item.path}>{item.text}</Link>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-    </Wrapper>
+    <NavWrapper>
+      <Container>
+        <StyledFlex>
+          <div>
+            <Link to='/'>
+              <Logo />
+            </Link>
+          </div>
+          <StyledNavbar isOpen={!isOpen}>
+            {links.map((item, index) => {
+              return (
+                <Link key={index} to={item.path}>
+                  {item.text}
+                </Link>
+              )
+            })}
+            <button type='button' onClick={toggleNav}>
+              <GoThreeBars />
+            </button>
+          </StyledNavbar>
+        </StyledFlex>
+      </Container>
+    </NavWrapper>
   )
 }
-
-const Wrapper = styled.nav``
 
 export default Navbar

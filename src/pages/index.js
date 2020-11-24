@@ -1,10 +1,15 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import styled from 'styled-components'
+
+const H1 = styled.h1`
+  color: ${(props) => props.theme.colors.primary};
+`
 
 export default function Home() {
   return (
     <Layout>
-      <h1>SLHA Leiden</h1>
+      <H1>SLHA Leiden</H1>
     </Layout>
   )
 }
