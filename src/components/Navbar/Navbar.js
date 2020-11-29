@@ -41,16 +41,6 @@ const NavWrapper = styled.div`
 
 const StyledNavbar = styled.nav`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: absolute;
-  background: green;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 100%;
 
   & > a {
     display: block;
@@ -67,10 +57,13 @@ const StyledNavbar = styled.nav`
 
   & > div {
     padding: 0.5rem 0.75rem;
+    color: ${(props) => props.theme.colors.primaryColor};
   }
 
   & > button {
     display: none;
+    color: ${(props) => props.theme.colors.primaryColor};
+    width: 2rem;
   }
 
   @media only screen and (max-width: 600px) {
@@ -80,17 +73,16 @@ const StyledNavbar = styled.nav`
 
     & > button {
       display: flex;
-      width: 3.5rem;
       background: transparent;
       border: none;
       justify-content: center;
       align-items: center;
       font-size: 1.5rem;
       cursor: pointer;
-    }
 
-    & > button:hover {
-      color: ${(props) => props.theme.colors.primaryColor};
+      & > button:hover {
+        color: green;
+      }
     }
   }
 `
