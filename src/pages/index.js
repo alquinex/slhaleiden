@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import styled from 'styled-components'
 
 const H1 = styled.h1`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primaryColor};
 `
 
 export default function Home() {

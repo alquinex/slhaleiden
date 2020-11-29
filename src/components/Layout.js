@@ -7,7 +7,10 @@ import Footer from './Footer'
 
 const theme = {
   colors: {
-    primary: '#0080FF',
+    primaryColor: '#0080FF',
+    mainWhite: '#fff',
+    mainBlack: '#333',
+    lightBlack: '#ccc',
   },
 }
 

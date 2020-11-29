@@ -35,11 +35,35 @@ const StyledButton = styled.button`
 
 const NavWrapper = styled.div`
   background-color: white;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  color: ${(props) => props.theme.colors.primaryColor};
 `
 
 const StyledNavbar = styled.nav`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  background: green;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+
+  & > a {
+    display: block;
+    text-decoration: none;
+    padding: 1rem 1.25rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: ${(props) => props.theme.colors.mainBlack};
+  }
+
+  & > a:hover {
+    border-bottom: ${(props) => props.theme.colors.primaryColor} 1.5 px solid;
+  }
 
   & > div {
     padding: 0.5rem 0.75rem;
@@ -55,7 +79,18 @@ const StyledNavbar = styled.nav`
     }
 
     & > button {
-      display: block;
+      display: flex;
+      width: 3.5rem;
+      background: transparent;
+      border: none;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    & > button:hover {
+      color: ${(props) => props.theme.colors.primaryColor};
     }
   }
 `
@@ -75,7 +110,7 @@ const Navbar = () => {
               <Logo />
             </Link>
           </div>
-          <StyledNavbar isOpen={!isOpen}>
+          <StyledNavbar isOpen={isOpen}>
             {links.map((item, index) => {
               return (
                 <Link key={index} to={item.path}>

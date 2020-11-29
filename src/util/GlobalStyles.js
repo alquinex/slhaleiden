@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import 'fontsource-open-sans'
 
 const GlobalStyles = createGlobalStyle`
   *{
@@ -7,9 +8,10 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body{
-    font-family: 'Roboto', sans;
-    
-  }
+  body {
+  font-family: 'Open Sans', sans-serif
+}
+
+  
 `
 export default GlobalStyles
