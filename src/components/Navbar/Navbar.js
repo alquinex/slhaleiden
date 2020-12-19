@@ -7,6 +7,26 @@ import styled from 'styled-components'
 import StyledFlex from '../base/StyledFlex'
 import Container from '../base/Container'
 
+const Navbar = ({ toggle }) => {
+  return (
+    <Nav>
+      <NavLink to='/'>
+        <Logo />
+      </NavLink>
+      <Bars onClick={toggle} />
+      <NavMenu>
+        {links.map((item, index) => (
+          <NavLink key={index} to={item.path}>
+            {item.text}
+          </NavLink>
+        ))}
+      </NavMenu>
+    </Nav>
+  )
+}
+
+export default Navbar
+
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -49,28 +69,3 @@ const NavMenu = styled.div`
     display: none;
   }
 `
-
-const Navbar = () => {
-  // const [isOpen, setNav] = useState(false)
-  // const toggleNav = () => {
-  //   setNav((isOpen) => !isOpen)
-  // }
-
-  return (
-    <Nav>
-      <NavLink to='/'>
-        <Logo />
-      </NavLink>
-      <Bars />
-      <NavMenu>
-        {links.map((item, index) => (
-          <NavLink key={index} to={item.path}>
-            {item.text}
-          </NavLink>
-        ))}
-      </NavMenu>
-    </Nav>
-  )
-}
-
-export default Navbar
