@@ -11,9 +11,7 @@ const H1 = styled.h1`
 export default function Home() {
   return (
     <Layout>
-      <Hero>
-        <Banner />
-      </Hero>
+      <Hero>{/* <Banner /> */}</Hero>
       <H1>SLHA Leiden</H1>
     </Layout>
   )

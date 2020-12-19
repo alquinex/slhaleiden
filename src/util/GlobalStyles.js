@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import 'fontsource-open-sans'
 
 const GlobalStyles = createGlobalStyle`
   *{
@@ -9,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-  font-family: 'Open Sans', sans-serif
+  font-family: 'Roboto', sans-serif
 }
 
   
