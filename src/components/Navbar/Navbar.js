@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import links from './links'
 import { Link } from 'gatsby'
 import Logo from './Logo'
 import { GoThreeBars } from 'react-icons/go'
 import styled from 'styled-components'
-import StyledFlex from '../base/StyledFlex'
-import Container from '../base/Container'
 
 const Navbar = ({ toggle }) => {
   return (
@@ -30,9 +28,10 @@ export default Navbar
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  background-color: #0080ff;
+  background-color: transparent;
   padding: 0.5rem calc((100vw-1300px) / 2);
-  position: relative;
+  /* position: relative;
+  z-index: 1000; */
 `
 
 const NavLink = styled(Link)`

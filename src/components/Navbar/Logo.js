@@ -1,7 +1,5 @@
 import React from 'react'
 import logo from '../../images/logo-white.png'
-import { useStaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
 
 // const getLogo = graphql`
 //   {
@@ -25,11 +23,9 @@ import styled from 'styled-components'
 // `
 
 const Logo = () => {
-  // const response = useStaticQuery(getLogo)
-  // const res = response.myLogo.edges[0].node.logo
   return (
     <div>
-      <img src={logo} width='100px' />
+      <img src={logo} width='100px' alt='org-logo' />
     </div>
   )
 }
