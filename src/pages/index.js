@@ -1,17 +1,19 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react'
-import Layout from '../components/Layout'
-import styled from 'styled-components'
-import Hero from '../components/Hero'
+import Layout from '@/components/layout/layout'
+import Seo from '@/components/layout/seo'
+import Container from '@/components/shared/container'
+import { Heading } from '@chakra-ui/react'
 
-const H1 = styled.h1`
-  color: ${(props) => props.theme.colors.primaryColor};
-`
-
-export default function Home() {
+const IndexPage = () => {
   return (
     <Layout>
-      <Hero />
-      <H1>SLHA Leiden</H1>
+      <Seo title='Home' />
+      <Container>
+        <Heading color='primary'>Index Page</Heading>
+      </Container>
     </Layout>
   )
 }
+
+export default IndexPage

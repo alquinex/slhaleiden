@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "kentcdodds",
+    "kentcdodds/react",
+    "kentcdodds/jsx-a11y",
+    "kentcdodds/jest"
+  ],
+  "rules": {
+    "babel/camelcase": "off",
+    "react/prop-types": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@/components", "./src/components"],
+          ["@/images", "./src/images"]
+        ],
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  }
+}
